@@ -1,5 +1,5 @@
 /**
- * Purpose : Flip Coin and Calculate Percentage
+ * Purpose : To Flip Coin and Calculate Percentage
  * 
  * @author Ansar
  * @version 1.2

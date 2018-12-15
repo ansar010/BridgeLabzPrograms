@@ -77,7 +77,7 @@ public class Utilities {
 		System.out.println("____________________________\n\n");
 		System.out.println("Heads is : "+percentHeads+"%");
 		System.out.println("Tails is : "+percentTails+"%");
-		System.out.println("hihihi");
+		
 	}
 
 	//Method to Toss Coin

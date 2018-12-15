@@ -5,7 +5,7 @@ public class Utilities {
 
 	static Scanner sc = new Scanner(System.in);
 
-	//Method to replace String
+	//1.Method to replace String
 	/**
 	 * @param To replace string 
 	 */
@@ -33,13 +33,20 @@ public class Utilities {
 
 
 
-	//Method to Flip Coin and calculate percentage
+	//2.Method to Flip Coin and calculate percentage
 	/**
 	 * 
 	 * @param n Number of time to flip coin 
 	 */
 	public static void flipCoin(int n)
 	{
+		if(n<0)
+		{
+			System.out.println("Enter positive integer..!!");
+			 n = sc.nextInt();
+			flipCoin(n);
+		}
+		else {
 		// response -> to get user choice  
 		int count=1,response;
 		double heads=0,tails=0;
@@ -77,10 +84,10 @@ public class Utilities {
 		System.out.println("____________________________\n\n");
 		System.out.println("Heads is : "+percentHeads+"%");
 		System.out.println("Tails is : "+percentTails+"%");
-		
+		}
 	}
 
-	//Method to Toss Coin
+	//2.1 Method to Toss Coin
 	public static int cointoss()
 	{
 		double result = Math.random();//generate random value

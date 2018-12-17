@@ -320,7 +320,7 @@ public class Utilities {
 		System.out.println("\nWins "+win+" out of "+numOfTimes+" trials.");
 		System.out.println("Percentage of Wins : "+wins+"%");
 
-		System.out.println("\nLoss "+loss+" out of "+numOfTimes+" trials");
+		System.out.println("\nLoss "+loss+" out of "+numOfTimes+" trials.");
 		System.out.println("Percentage of Loss : "+los+"%");
 		//System.out.println("Bet Price is : "+bets);
 		System.out.println("\nAverage bets : "+1.0*bets/numOfTimes);	

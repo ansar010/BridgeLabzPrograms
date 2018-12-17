@@ -313,8 +313,8 @@ public class Utilities {
 		}
 
 		// Result
-		System.out.println("\n\tResult");
-		System.out.println("\t------");
+		System.out.println("\n\tResult..");
+		System.out.println("\t--------");
 
 		double wins=100.0*win/numOfTimes,los=100.0*loss/numOfTimes;
 		System.out.println("\nWins "+win+" out of "+numOfTimes+" trials.");

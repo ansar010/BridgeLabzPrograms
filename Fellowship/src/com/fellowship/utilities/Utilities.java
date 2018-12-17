@@ -317,7 +317,7 @@ public class Utilities {
 		System.out.println("\t------");
 
 		double wins=100.0*win/numOfTimes,los=100.0*loss/numOfTimes;
-		System.out.println("\nWins "+win+" out of "+numOfTimes+" trials");
+		System.out.println("\nWins "+win+" out of "+numOfTimes+" trials.");
 		System.out.println("Percentage of Wins : "+wins+"%");
 
 		System.out.println("\nLoss "+loss+" out of "+numOfTimes+" trials");

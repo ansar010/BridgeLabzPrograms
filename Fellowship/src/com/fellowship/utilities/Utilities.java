@@ -102,6 +102,7 @@ public class Utilities {
 			return 0;
 		}
 	}
+	//*******************************************************************************
 
 	//3. Method to check LeapYear
 	/**
@@ -133,4 +134,197 @@ public class Utilities {
 			}
 		}
 	}
+	//*******************************************************************************
+
+	//4. power of n series 
+	/**
+	 * 
+	 * @param n takes power number
+	 */
+	public static void powerSeries(int n)
+	{
+		if(n<31)
+		{
+			for(int i=0;i<=n;i++)
+			{
+				System.out.println("Power of 2^"+i+" = "+pow(2,i));
+			}
+		}
+		else
+		{
+			System.out.println("n shoud be less than 31...!");
+			n=sc.nextInt();
+			powerSeries(n);//recur
+		}
+	}
+
+	//4.1 Method to calculate power of num
+	/**
+	 * 
+	 * @param num takes number
+	 * @param p	  takes power 
+	 * @return	  return the the power value of num
+	 */
+	public static int pow(int num,int p)
+	{
+		int result=1; //result to calculate power value
+		while(p!=0) //Condition to multiply number until power value become zero
+		{
+			result*=num; 
+			p--; //Decrementing power value 
+		}
+		return result;
+	}
+	//**************************************************************************************
+
+
+	//5. Method to print Nth Harmonic value
+	/**
+	 * 
+	 * @param n takes Nth value from user
+	 */
+	public static void nHarmonicValue(int n)
+	{
+		if(n!=0) // condition to loop until n zero
+		{
+			for(int i=1;i<=n;i++)
+			{
+				if(i<n) 
+					System.out.print("1/"+i+" + ");
+				if(i==n)
+					System.out.print("1/"+i);
+			}
+			System.out.print(" = "+harmonicSeries(n));
+
+		}
+		else
+		{
+			System.out.println("n value shoud be greater than 0..!");
+			n=sc.nextInt();
+			nHarmonicValue(n); // recursively calling same method until user give valid input
+		}
+	}
+
+	//5.1 Method to calculate harmonic Nth number
+	/**
+	 * 
+	 * @param n takes Nth value
+	 * @return return harmonic value of given number
+	 */
+	private static double harmonicSeries(int n)
+	{
+
+		double i=1,sum=0.0; 
+		//Logic to divide the given num and sum 
+		while(i<=n)
+		{
+			sum += 1.0/i;
+			i++;
+		}
+		return sum;
+	}
+
+
+
+
+	//********************************************************************************************
+
+	//6. Prime Factorization
+	/**
+	 * 
+	 * @param num To get number from user
+	 */
+	public static void primeFactorization(long num) 
+	{
+		System.out.print("Prime factors of "+num+" : ");
+		//for(long i=2;i*i<=num;i++)
+
+		// num/i -> to divide given number for further itreation
+		for(long i=2;i<=num/i;i++) 
+		{
+			// Checking condition and prints prime factor
+			while(num%i==0)
+			{
+				num=num/i;
+				System.out.print(i+" ");
+			}
+		}
+
+		//To Print Print factor of last remaining digit
+		if(num>1)
+		{
+			System.out.print(num);
+		}
+	}
+
+	//Method to check the Number is Prime or not
+	/**
+	 * 
+	 * @param n to get number from user
+	 * @return true if number is prime else false
+	 */
+	private static boolean isPrime(int n) 
+	{
+		for(int i=2;i<=n/2;i++)
+		{
+			if(n%i==0)
+				return false;
+		}
+
+		return true;
+	}
+	//****************************************************************************************
+
+	//6. Method to stimulate the gambler
+	/**
+	 * 
+	 * @param $stak gamblers initial amount
+	 * @param $goal gamblers desired amount
+	 * @param numOfTimes Number of trials 
+	 */
+	public static void playGame(int $stak, int $goal, int numOfTimes)
+	{
+		int win=0;  // Total Numbers of game won
+
+		int bets=0; // Total Number of bets made
+
+		int loss=0; // Total Number of game loss
+
+		// Iteration based on trails 
+		for(int trials=0;trials<numOfTimes;trials++)
+		{
+			//Stimulating Gambler
+			int cash=$stak;
+			while(cash>0 && cash<$goal)
+			{
+				bets++;
+
+				if(Math.random()<0.5)
+					cash++; //win 1$
+
+				else
+					cash--; //Loss 1$
+
+			}
+			if(cash==$goal) // Condition to check is Gambler reached to goal
+				win++;
+			else
+				loss++;
+		}
+
+		// Result
+		System.out.println("\n\tResult");
+		System.out.println("\t------");
+
+		double wins=100.0*win/numOfTimes,los=100.0*loss/numOfTimes;
+		System.out.println("\nWins "+win+" out of "+numOfTimes+" trials");
+		System.out.println("Percentage of Wins : "+wins+"%");
+
+		System.out.println("\nLoss "+loss+" out of "+numOfTimes+" trials");
+		System.out.println("Percentage of Loss : "+los+"%");
+		//System.out.println("Bet Price is : "+bets);
+		System.out.println("\nAverage bets : "+1.0*bets/numOfTimes);	
+	}
+
+
 }

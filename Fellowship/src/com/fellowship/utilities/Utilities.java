@@ -6,10 +6,10 @@
  * @since 13/12/2018
  */
 package com.fellowship.utilities;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
 import java.util.Scanner;
-//import java.util.Collection;
-import java.util.HashSet;
 public class Utilities {
 
 	static Scanner sc = new Scanner(System.in);
@@ -418,7 +418,7 @@ public class Utilities {
 	}
 	//****************************************************************************************
 
-	//6. Method to stimulate the gambler
+	//7. Method to stimulate the gambler
 	/**
 	 * 
 	 * @param $stak gamblers initial amount
@@ -468,30 +468,73 @@ public class Utilities {
 		//System.out.println("Bet Price is : "+bets);
 		System.out.println("\nAverage bets : "+1.0*bets/numOfTimes);	
 	}
+	//*********************************************************************************************
 
-	public static int totalIterations(int[] coupons) {
-		
+	// 8. To find Number of iteration to find distinct coupon
+	/**
+	 * 
+	 * @param coupons takes user entered array elements 
+	 * @return number of iteration taken for distinct coupons
+	 */
+	public static int totalIterations(int[] coupons) 
+	{
+		// Total number of counts and length of array
 		int count=0,length=coupons.length;
-		
+
+		// iterates until lengths become 0
 		while(length!=0)
 		{
+			// Generate random number with in 10
 			int rno = rand.nextInt(10);
-			
+
 			for(int i = 0; i<length;i++)
 			{
+				// check randomly generated number = user's coupon number 
 				count++;
 				if(rno==coupons[i])
 				{
+					// Eliminating duplicate element by replacing last element
 					coupons[i]=coupons[length-1];
 					length--;
-					//break;
+					break;
 				}
 			}
 		}
-		
+
 		return count;			
 	}
 
-//*******************************************************************************************
 	
+	public static void couponNew(int size)
+	{
+		int count=0;
+		ArrayList<Integer> al = new ArrayList<Integer>();
+		ArrayList<Integer> al1 = new ArrayList<>();
+		int length=size;
+
+		while(length!=0){		
+			for(int i=0;i<size;i++)
+			{
+			int rn = rand.nextInt(size)+1;
+			al.add(rn);
+			
+				if(!(al1.contains(rn)))
+				{
+					al1.add(rn);
+					length--;
+					//count++;
+				}
+				
+			count++;
+			}
+			//length--;
+		}
+		System.out.println("Randomly Generated Numbers");
+		System.out.println(al);
+		System.out.println("Distinct Coupon Numbers");
+		System.out.println(al1);
+		System.out.println("number of iteration is "+count);
+	}
+	//*******************************************************************************************
+
 }

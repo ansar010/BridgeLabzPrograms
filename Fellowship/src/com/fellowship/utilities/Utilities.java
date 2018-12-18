@@ -1,9 +1,152 @@
+/**
+ * purpose : Utility class to define all methods
+ * 
+ * @author Ansar
+ * @version 1.2
+ * @since 13/12/2018
+ */
 package com.fellowship.utilities;
+import java.util.Random;
 import java.util.Scanner;
-
+//import java.util.Collection;
+import java.util.HashSet;
 public class Utilities {
 
 	static Scanner sc = new Scanner(System.in);
+	static Random rand = new Random();
+
+	/**
+	 * Method to get char from user
+	 */
+	public static char getChar() 
+	{
+		char ch = sc.next().charAt(0);
+		return ch;
+	}
+
+	/** 
+	 * Method to get word from String  
+	 */
+	public static String getWord() 
+	{
+		String word = sc.next();
+		return word;
+	}
+
+	/**
+	 * Method to get String as line
+	 */
+	public static String getLine()
+	{
+		String str = sc.nextLine();
+		return str;
+	}
+
+	/**
+	 * Method to get integer as input
+	 */
+	public static int getInt()
+	{
+		int i = sc.nextInt();
+		return i;
+	}
+
+	/**
+	 * Method to get Long as input
+	 */
+	public static Long getLong()
+	{
+		long l = sc.nextLong();
+		return l;
+	}
+
+	/**
+	 * Method to Get float as input
+	 */
+	public static float getFloat()
+	{
+		float f = sc.nextFloat();
+		return f;
+	}
+
+	/**
+	 * Method to get double as input
+	 */
+	public static double getDouble()
+	{
+		Double d = sc.nextDouble();
+		return d;
+	}
+	/**
+	 * Method to create and insert element in integer OneDimensional array
+	 */
+	public static int[] createIntArr()
+	{
+		//System.out.println("Enter size of an Array..");
+		int s = getInt();
+		int[] arr = new int[s];
+		System.out.println("Enter "+s+" elements ");
+		for(int i = 0;i<arr.length;i++)
+		{
+			arr[i]=getInt();
+		}
+		return arr;
+	}
+
+	/**
+	 * Method to Dispaly oneDimenstional Array
+	 */
+	public static void displayArr(int a[])
+	{
+		for(int i=0;i<a.length;i++)
+		{
+			System.out.println(" "+a[i]+" ");
+		}
+	}
+	/**
+	 * Method to create String and insert elements in String 1D array 
+	 */
+	public static void createStrArr()
+	{
+		System.out.println("Enter size of an Array..");
+		int s = getInt();
+		String arr[] = new String[s];
+		System.out.println("Enter "+s+" elements ");
+		for(int i = 0;i<arr.length;i++)
+		{
+			arr[i]=getWord();
+		}
+	}
+
+	/*/**
+	 * Method to create char array
+	 *
+	public static char[] createCharArr()
+	{
+
+			System.out.println("Enter size of an Array..");
+			int s = getInt();
+			char arr[] = new char[s];
+			return arr;
+
+	}*/
+
+	/**
+	 * Method to create and insert elements in double 1D array
+	 */
+	public static void createDoubleArr()
+	{
+		System.out.println("Enter size of an Array..");
+		int s = getInt();
+		double arr[] = new double[s];
+		System.out.println("Enter "+s+" elements ");
+		for(int i = 0;i<arr.length;i++)
+		{
+			arr[i]=getDouble();
+		}
+	}
+
+
 
 	//1.Method to replace String
 	/**
@@ -326,5 +469,29 @@ public class Utilities {
 		System.out.println("\nAverage bets : "+1.0*bets/numOfTimes);	
 	}
 
+	public static int totalIterations(int[] coupons) {
+		
+		int count=0,length=coupons.length;
+		
+		while(length!=0)
+		{
+			int rno = rand.nextInt(10);
+			
+			for(int i = 0; i<length;i++)
+			{
+				count++;
+				if(rno==coupons[i])
+				{
+					coupons[i]=coupons[length-1];
+					length--;
+					//break;
+				}
+			}
+		}
+		
+		return count;			
+	}
 
+//*******************************************************************************************
+	
 }

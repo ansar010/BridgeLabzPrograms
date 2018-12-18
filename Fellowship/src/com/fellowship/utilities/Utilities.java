@@ -102,7 +102,7 @@ public class Utilities {
 	{
 		for(int i=0;i<a.length;i++)
 		{
-			System.out.println(" "+a[i]+" ");
+			System.out.println("Index["+i+"]->"+a[i]);
 		}
 	}
 	/**
@@ -565,7 +565,7 @@ public class Utilities {
 		try {
 			// Creating Text file obj
 			BufferedWriter bw = new BufferedWriter(new FileWriter("/home/admin1/Desktop/ProgFiles/2D.txt"));
-			
+
 			// Logic for @D Array
 			for(int i = 0;i<row;i++)
 			{
@@ -585,5 +585,37 @@ public class Utilities {
 	}
 	//******************************************************************************************************
 	
-	
+	// 10. Method to print the sum
+	/**
+	 * 
+	 * @param arr user given Array elements
+	 * @param length length of an array 
+	 */
+	public static void tripletsZero(int[] arr,int length) 
+	{
+		boolean find =false;
+		
+		// Loop to traverse over array
+		for(int i=0;i<length-2;i++)
+		{
+			for(int j=i+1;j<length-1;j++)
+			{
+				// sum of i+j+K
+				for(int k=j+1;k<length;k++)
+				{
+					if(arr[i]+arr[j]+arr[k]==0)
+					{
+						find=true;
+						System.out.println("\n\n{ "+arr[i]+" , "+arr[j]+" , "+arr[k]+" }");
+					
+					}					
+				}
+			}
+		}
+		
+		if(find==false)
+		System.out.println("\n\nNo Triplets sum Zero..");
+	}
+//	
+		
 }

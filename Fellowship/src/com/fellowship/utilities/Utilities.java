@@ -6,8 +6,10 @@
  * @since 13/12/2018
  */
 package com.fellowship.utilities;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Random;
 import java.util.Scanner;
 public class Utilities {
@@ -504,31 +506,44 @@ public class Utilities {
 		return count;			
 	}
 
-	
+	// Another way of finding random distinct coupon Numbers
+	/**
+	 * 
+	 * @param size Number of coupons user want
+	 */
 	public static void couponNew(int size)
 	{
+		// Total Number of Iteratioin
 		int count=0;
+
+		// Array List to put randomly generated Numbers
 		ArrayList<Integer> al = new ArrayList<Integer>();
 		ArrayList<Integer> al1 = new ArrayList<>();
+
 		int length=size;
 
-		while(length!=0){		
+		// To iterate until we get required number of coupons
+		while(length!=0){
+
+			// Generating random number based on user requirement
 			for(int i=0;i<size;i++)
 			{
-			int rn = rand.nextInt(size)+1;
-			al.add(rn);
-			
+				int rn = rand.nextInt(size)+1;
+				al.add(rn);
+
+				// if arrayList1 doesn't has randomly generated Numbe Add it
 				if(!(al1.contains(rn)))
 				{
 					al1.add(rn);
 					length--;
-					//count++;
 				}
-				
-			count++;
+
+				count++;
 			}
 			//length--;
 		}
+
+
 		System.out.println("Randomly Generated Numbers");
 		System.out.println(al);
 		System.out.println("Distinct Coupon Numbers");
@@ -537,4 +552,38 @@ public class Utilities {
 	}
 	//*******************************************************************************************
 
+	// 9. To read and Write 2D Array
+	/**
+	 * 
+	 * @param row takes number of rows from user
+	 * @param col takes number of columns from user
+	 */
+	public static void TwoDArr(int row,int col)
+	{
+		int arr[][]=new int[row][col];
+		System.out.println("Enter "+row*col+" Elements in an Array");
+		try {
+			// Creating Text file obj
+			BufferedWriter bw = new BufferedWriter(new FileWriter("/home/admin1/Desktop/ProgFiles/2D.txt"));
+			
+			// Logic for @D Array
+			for(int i = 0;i<row;i++)
+			{
+				for(int j=0;j<col;j++)
+				{
+					// To write Elements in corresponding text File
+					bw.write((arr[i][j]=sc.nextInt())+" ");
+				}
+				bw.newLine();
+			}
+			System.out.println("Successfully added Elements in 2D array..");
+			bw.close();
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+	}
+	//******************************************************************************************************
+	
+	
 }

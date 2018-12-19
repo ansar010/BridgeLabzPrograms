@@ -616,6 +616,18 @@ public class Utilities {
 		if(find==false)
 		System.out.println("\n\nNo Triplets sum Zero..");
 	}
-//	
+//**********************************************************************************************************	
+	
+	// Method to calculate Euclidean distance
+	/**
+	 * 
+	 * @param x command line arguments 
+	 * @param y
+	 */
+	public static void euclideanDistance(int x, int y) 
+	{
+														// 0.5=1/2 represents root 
+		System.out.println("The Euclidean Distance is : "+Math.pow(((x*x)+(y*y)), 0.5));
+	}
 		
 }

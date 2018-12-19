@@ -584,7 +584,7 @@ public class Utilities {
 		}
 	}
 	//******************************************************************************************************
-	
+
 	// 10. Method to print the sum
 	/**
 	 * 
@@ -594,7 +594,7 @@ public class Utilities {
 	public static void tripletsZero(int[] arr,int length) 
 	{
 		boolean find =false;
-		
+
 		// Loop to traverse over array
 		for(int i=0;i<length-2;i++)
 		{
@@ -607,17 +607,17 @@ public class Utilities {
 					{
 						find=true;
 						System.out.println("\n\n{ "+arr[i]+" , "+arr[j]+" , "+arr[k]+" }");
-					
+
 					}					
 				}
 			}
 		}
-		
+
 		if(find==false)
-		System.out.println("\n\nNo Triplets sum Zero..");
+			System.out.println("\n\nNo Triplets sum Zero..");
 	}
-//**********************************************************************************************************	
-	
+	//**********************************************************************************************************	
+
 	// Method to calculate Euclidean distance
 	/**
 	 * 
@@ -626,8 +626,55 @@ public class Utilities {
 	 */
 	public static void euclideanDistance(int x, int y) 
 	{
-														// 0.5=1/2 represents root 
+		// 0.5=1/2 represents root 
 		System.out.println("The Euclidean Distance is : "+Math.pow(((x*x)+(y*y)), 0.5));
 	}
-		
+//**************************************************************************************
+	
+	// Method to find all possible permutation of String
+	/**
+	 * 
+	 * @param str Given String
+	 * @param first first index 
+	 * @param last  last index 
+	 */
+	public static void permutationString(String str, int first, int last)
+	{
+		// Prints fixed string
+		if(first==last)
+		{
+			System.out.println(str);
+		}
+		else
+		{
+			// recursively call methods and fix string 
+			for(int i=first;i<=last;i++)
+			{
+				str=swap(str,first,i);
+				permutationString(str,first+1,last);
+				str=swap(str,first,i);
+			}
+
+		}
+	}
+
+	// Method to Swap String
+	/**
+	 * 
+	 * @param str Given String
+	 * @param firstPos position1
+	 * @param secondPos position2
+	 * @return swapped string
+	 */
+	private static String swap(String str, int firstPos, int secondPos)
+	{
+		// var temp->to Store first word
+		char temp;
+		char[] ch = str.toCharArray();
+		temp = ch[firstPos];
+		ch[firstPos]=ch[secondPos];
+		ch[secondPos]=temp;
+		return String.valueOf(ch);
+	}
+
 }

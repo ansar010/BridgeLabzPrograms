@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 public class Utilities {
 
 	static Scanner sc = new Scanner(System.in);
@@ -618,7 +619,7 @@ public class Utilities {
 	}
 	//**********************************************************************************************************	
 
-	// Method to calculate Euclidean distance
+	// 11.Method to calculate Euclidean distance
 	/**
 	 * 
 	 * @param x command line arguments 
@@ -629,9 +630,9 @@ public class Utilities {
 		// 0.5=1/2 represents root 
 		System.out.println("The Euclidean Distance is : "+Math.pow(((x*x)+(y*y)), 0.5));
 	}
-//**************************************************************************************
-	
-	// Method to find all possible permutation of String
+	//**************************************************************************************
+
+	// 12. Method to find all possible permutation of String
 	/**
 	 * 
 	 * @param str Given String
@@ -658,7 +659,7 @@ public class Utilities {
 		}
 	}
 
-	// Method to Swap String
+	// 12.1 Method to Swap String
 	/**
 	 * 
 	 * @param str Given String
@@ -677,4 +678,38 @@ public class Utilities {
 		return String.valueOf(ch);
 	}
 
+	//*************************************************************************************************************
+
+	// 13. Method to calculate elapsed time between 
+
+	public static void elapsedTime()
+	{
+		// total time of start and stop
+		long start=0,stop=0;
+
+
+		while(true)
+		{
+			System.out.println("Enter 1 to start watch & 0 to stop watch");
+			int choice = getInt();
+
+			if(choice==1) {
+
+				// function which give exact time iin nano seconds
+				start = System.nanoTime();
+			}
+
+			if(choice==0)
+			{
+				stop = System.nanoTime();
+				break;
+			}
+		}
+		
+		// converting nano seconds into seconds
+		long elapsedTime = (stop-start)/1000000000;
+
+		//System.out.println("The Elapsed time between start and End "+TimeUnit.SECONDS.toSeconds(stop-start));
+		System.out.println("The Elapsed time between start time and end time is :"+elapsedTime+"seconds");
+	}
 }

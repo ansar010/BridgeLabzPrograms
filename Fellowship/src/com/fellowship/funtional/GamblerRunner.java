@@ -1,4 +1,4 @@
-/**
+/***********************************************************************************************
  * Purpose : Simulates a gambler who start with $stake and place fair $1 bets until
  *			 he/she goes broke (i.e. has no money) or reach $goal. Keeps track of the number of
  *			 times he/she wins and the number of bets he/she makes. Run the experiment N
@@ -7,13 +7,15 @@
  *@author Ansar
  *@version 1.2
  *@since 17/12/2018
- */
+ ***********************************************************************************************/
 package com.fellowship.funtional;
 import java.util.Scanner;
 import com.fellowship.utilities.Utilities;
 
-public class Gambler 
-{
+public class GamblerRunner 
+{	/*
+	 *The main function written to run the Gambler
+	 */
 	public static void main(String[] args) 
 	{
 		Scanner sc = new Scanner(System.in);

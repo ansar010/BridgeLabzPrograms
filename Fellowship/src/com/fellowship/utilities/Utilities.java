@@ -1,20 +1,23 @@
-/**
+/**************************************************************************************************
  * purpose : Utility class to define all methods
  * 
  * @author Ansar
  * @version 1.2
  * @since 13/12/2018
- */
+ **************************************************************************************************/
 package com.fellowship.utilities;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 public class Utilities {
-
+	/**
+	 * static Scanner and Random class objects to to call inbuilt methods 
+	 */
 	static Scanner sc = new Scanner(System.in);
 	static Random rand = new Random();
 
@@ -117,22 +120,10 @@ public class Utilities {
 		System.out.println("Enter "+s+" elements ");
 		for(int i = 0;i<arr.length;i++)
 		{
+	
 			arr[i]=getWord();
 		}
 	}
-
-	/*/**
-	 * Method to create char array
-	 *
-	public static char[] createCharArr()
-	{
-
-			System.out.println("Enter size of an Array..");
-			int s = getInt();
-			char arr[] = new char[s];
-			return arr;
-
-	}*/
 
 	/**
 	 * Method to create and insert elements in double 1D array
@@ -148,16 +139,15 @@ public class Utilities {
 			arr[i]=getDouble();
 		}
 	}
-
-
-
+	//*********************************************************************************************
+	
 	//1.Method to replace String
 	/**
 	 * @param To replace string 
 	 */
 	static public void replaceString(String username)
 	{
-		// tmpl_Str refers template
+		// tmpl_Str variable refers template
 		String tmpl_Str = "Hello <<UserName>>, How are you?";
 
 		//To ensure user-name has minimum 3 char
@@ -167,17 +157,17 @@ public class Utilities {
 		}
 		else
 		{
-			//temp refers to temporary variable
+			//temp variable refers to temporary variable
 			String temp="";
-			temp += tmpl_Str.substring(0,6);// substring() method used to get substring of template
+			
+			// substring() method used to get substring of template
+			temp += tmpl_Str.substring(0,6);
 			temp += username;
 			temp += tmpl_Str.substring(18,tmpl_Str.length());
 			System.out.println(temp);
 		}
 	}
-	//********************************************************************************
-
-
+	//*********************************************************************************************
 
 	//2.Method to Flip Coin and calculate percentage
 	/**
@@ -248,7 +238,7 @@ public class Utilities {
 			return 0;
 		}
 	}
-	//*******************************************************************************
+	//*********************************************************************************************
 
 	//3. Method to check LeapYear
 	/**
@@ -258,7 +248,9 @@ public class Utilities {
 
 	public static void isLeapYear(int year) 
 	{
+		// length variable hold the length of integer year
 		int length = Integer.toString(year).length();
+		
 		//int length1 = String.valueOf(year1).length();
 		if(length<4&&length>4)
 		{
@@ -267,9 +259,9 @@ public class Utilities {
 			isLeapYear(year);
 		}
 		else
-		{	/* Leap Year logic->The year completely divided by 4 but not by 100
-				the year divided by 400
-		 */
+		{	// Leap Year logic->The year completely divided by 4 but not by 100
+			//	the year divided by 400
+		 
 			if(year%4==0&&year%100!=0||year%400==0) 
 			{
 				System.out.println(year+" is a leap year.");
@@ -280,7 +272,7 @@ public class Utilities {
 			}
 		}
 	}
-	//*******************************************************************************
+	//*********************************************************************************************
 
 	//4. power of n series 
 	/**
@@ -288,9 +280,11 @@ public class Utilities {
 	 * @param n takes power number
 	 */
 	public static void powerSeries(int n)
-	{
+	{	
+		// Ensures that user given value is less than 31
 		if(n<31)
 		{
+			// loop for traverse n time to calculate power of 2^n
 			for(int i=0;i<=n;i++)
 			{
 				System.out.println("Power of 2^"+i+" = "+pow(2,i));
@@ -300,16 +294,16 @@ public class Utilities {
 		{
 			System.out.println("n shoud be less than 31...!");
 			n=sc.nextInt();
-			powerSeries(n);//recur
+			powerSeries(n);//recursive approach
 		}
 	}
 
-	//4.1 Method to calculate power of num
+	//4.1 Method to calculate power of number
 	/**
 	 * 
 	 * @param num takes number
 	 * @param p	  takes power 
-	 * @return	  return the the power value of num
+	 * @return	  return the power value of number
 	 */
 	public static int pow(int num,int p)
 	{
@@ -321,7 +315,7 @@ public class Utilities {
 		}
 		return result;
 	}
-	//**************************************************************************************
+	//*********************************************************************************************
 
 
 	//5. Method to print Nth Harmonic value
@@ -361,7 +355,7 @@ public class Utilities {
 	{
 
 		double i=1,sum=0.0; 
-		//Logic to divide the given num and sum 
+		//Logic to divide the given number and sum 
 		while(i<=n)
 		{
 			sum += 1.0/i;
@@ -373,7 +367,7 @@ public class Utilities {
 
 
 
-	//********************************************************************************************
+	//*********************************************************************************************
 
 	//6. Prime Factorization
 	/**
@@ -419,7 +413,7 @@ public class Utilities {
 
 		return true;
 	}
-	//****************************************************************************************
+	//*********************************************************************************************
 
 	//7. Method to stimulate the gambler
 	/**
@@ -532,7 +526,7 @@ public class Utilities {
 				int rn = rand.nextInt(size)+1;
 				al.add(rn);
 
-				// if arrayList1 doesn't has randomly generated Numbe Add it
+				// if arrayList1 doesn't has randomly generated Number Add it
 				if(!(al1.contains(rn)))
 				{
 					al1.add(rn);
@@ -551,7 +545,7 @@ public class Utilities {
 		System.out.println(al1);
 		System.out.println("number of iteration is "+count);
 	}
-	//*******************************************************************************************
+	//*********************************************************************************************
 
 	// 9. To read and Write 2D Array
 	/**
@@ -584,7 +578,7 @@ public class Utilities {
 			e.printStackTrace();
 		}
 	}
-	//******************************************************************************************************
+	//*********************************************************************************************
 
 	// 10. Method to print the sum
 	/**
@@ -617,7 +611,7 @@ public class Utilities {
 		if(find==false)
 			System.out.println("\n\nNo Triplets sum Zero..");
 	}
-	//**********************************************************************************************************	
+	//*********************************************************************************************
 
 	// 11.Method to calculate Euclidean distance
 	/**
@@ -630,7 +624,7 @@ public class Utilities {
 		// 0.5=1/2 represents root 
 		System.out.println("The Euclidean Distance is : "+Math.pow(((x*x)+(y*y)), 0.5));
 	}
-	//**************************************************************************************
+	//*********************************************************************************************
 
 	// 12. Method to find all possible permutation of String
 	/**
@@ -678,7 +672,7 @@ public class Utilities {
 		return String.valueOf(ch);
 	}
 
-	//*************************************************************************************************************
+	//*********************************************************************************************
 
 	// 13. Method to calculate elapsed time between 
 
@@ -705,11 +699,14 @@ public class Utilities {
 				break;
 			}
 		}
-		
+
 		// converting nano seconds into seconds
 		long elapsedTime = (stop-start)/1000000000;
 
 		//System.out.println("The Elapsed time between start and End "+TimeUnit.SECONDS.toSeconds(stop-start));
 		System.out.println("The Elapsed time between start time and end time is :"+elapsedTime+"seconds");
 	}
+	//*********************************************************************************************
+
+
 }

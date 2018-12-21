@@ -9,7 +9,7 @@
  *@since 17/12/2018
  ***********************************************************************************************/
 package com.fellowship.funtional;
-import java.util.Scanner;
+
 import com.fellowship.utilities.Utilities;
 
 public class GamblerRunner 
@@ -17,23 +17,20 @@ public class GamblerRunner
 	 *The main function written to run the Gambler
 	 */
 	public static void main(String[] args) 
-	{
-		Scanner sc = new Scanner(System.in);
-		
+	{		
 		// Getting initial amount of Gamblers
 		System.out.println("Enter the $Stak Value  ");
-		int $stak = sc.nextInt();
+		int $stak = Utilities.getInt();
 		
 		//Getting desired amount of gambler
 		System.out.println("Set your Goal..!");
-		int $goal = sc.nextInt();
+		int $goal = Utilities.getInt();
 		
 		//Getting Number of Trials Gambler Want
 		System.out.println("Enter the number of times u want to try..!");
-		int numOfTimes = sc.nextInt();
+		int numOfTimes = Utilities.getInt();
 		
 		// Calling method to perform task
 		Utilities.playGame($stak,$goal,numOfTimes);
-		sc.close();
 	}
 }

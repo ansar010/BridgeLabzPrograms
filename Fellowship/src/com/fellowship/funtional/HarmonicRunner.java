@@ -10,7 +10,7 @@ package com.fellowship.funtional;
 import java.util.Scanner;
 import com.fellowship.utilities.Utilities;
 
-public class Harmonic {
+public class HarmonicRunner {
 public static void main(String[] args) {
 	Scanner sc = new Scanner(System.in);
 	System.out.println("Enter the N number: ");

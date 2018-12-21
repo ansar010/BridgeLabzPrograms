@@ -1,29 +1,36 @@
+/**
+ * purpose : To create a program for TicTacToe Game , Computer will be player 1 .
+ * 
+ * @author Ansar
+ * @version 1.2
+ * @since 21/12/2018
+ * 
+ */
 package com.fellowship.funtional;
-
-
 import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Random;
 
 import com.fellowship.utilities.Utilities;
-
 public class TTT 
 {
+	// An array for initialize the board
 	static String[] board = new String[9];
-	static String player,turn,winner=null;
+	
+	
+	static String player2,turn,winner=null;
 
 
 	public static void main(String args[])
 	{
+		System.out.println("Start the game..!");	
 		System.out.println("Welcome to the TicTacToe Game");
 		System.out.println("-----------------------------");
 		boardInstruction();
-		System.out.println("player 1 will be computer and Symbol is : 0");
+		System.out.println("player 1 will be the computer and it's Symbol is : 0");
 		System.out.println("Enter the Name of the player 2");
-		player =Utilities.getLine();
-		//System.out.println("Start the game..!");	
+		player2 =Utilities.getLine();
 		System.out.println("Board instruction.");
-		//System.out.println("Computer will be player1 ");
 		System.out.println("Enter slot number which u want to occupy.");
 		playBoard();
 		int number;
@@ -78,7 +85,7 @@ public class TTT
 			System.out.println("Game is Draw1..!  Thanks for Playing..");
 		else {
 			if(winner.equals("X"))
-				System.out.println(player+" is Win");
+				System.out.println(player2+" is Win");
 			else
 				System.out.println("computer is Win");
 		}
@@ -118,7 +125,7 @@ public class TTT
 			else if(line.equals("000"))
 				return "0";
 		}
-		//return null;
+
 		for (int i = 0; i < 9; i++) {
 			if(Arrays.asList(board).contains(String.valueOf(i+1)))
 				break;
@@ -126,9 +133,7 @@ public class TTT
 				return "draw";
 		}
 		if(turn.equals("X"))
-		System.out.println(player + "'s turn; enter a slot number to place " + turn + " in:");
-		//else
-			//System.out.println("computer chosed ");
+			System.out.println(player2 + "'s turn; enter a slot number to place " + turn + " in:");
 		return null;
 	}
 	private static void playBoard() 

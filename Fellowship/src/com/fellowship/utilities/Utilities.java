@@ -923,7 +923,7 @@ public class Utilities {
 
 	}
 	//*********************************************************************************************
-	
+
 	//16. Method to take temperature and speed value and give windChill value
 	/**
 	 * 
@@ -934,6 +934,15 @@ public class Utilities {
 	public static double windChill(double t, double v) 
 	{
 		double windchill = 35.74+0.6215*t+(0.4275*t-35.75)*Math.pow(v, 0.16);
-				return windchill;
+		return windchill;
+	}
+
+	public static int dayOfWeek(int day, int month, int year) 
+	{
+		int y0 = ((year - (14 - month) / 12));
+		int x  = (y0 + y0/4-y0/100 + y0/400);
+		int m0 = (month+ 12 * ((14 - month) / 12) - 2);
+		int d0 = (((day + x + 31*m0	/ 12) % 7));
+		return d0;
 	}
 }

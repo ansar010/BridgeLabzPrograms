@@ -8,7 +8,9 @@
 package com.fellowship.funtional;
 import com.fellowship.utilities.Utilities;
 public class TwoDimArr
-{
+{	/*
+	 *The main function written to run the TwoDArr
+	 */
 	public static void main(String[] args)
 	{
 		

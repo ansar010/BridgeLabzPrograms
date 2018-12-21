@@ -922,4 +922,18 @@ public class Utilities {
 		System.out.println("Second Root :"+root2);
 
 	}
+	//*********************************************************************************************
+	
+	//16. Method to take temperature and speed value and give windChill value
+	/**
+	 * 
+	 * @param t temperature value
+	 * @param v speed
+	 * @return windChill 
+	 */
+	public static double windChill(double t, double v) 
+	{
+		double windchill = 35.74+0.6215*t+(0.4275*t-35.75)*Math.pow(v, 0.16);
+				return windchill;
+	}
 }

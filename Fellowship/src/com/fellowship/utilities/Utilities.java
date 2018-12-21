@@ -14,7 +14,6 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 public class Utilities {
 	/**
 	 * static Scanner and Random class objects to to call inbuilt methods 
@@ -901,4 +900,26 @@ public class Utilities {
 
 	}
 	//*********************************************************************************************
+
+	//15. Method to find root1 and root2 of x
+	/**
+	 * 
+	 * @param a takes the value of a
+	 * @param b takes the value of b
+	 * @param c takes the value of c
+	 */
+	public static void quadratic(int a, int b, int c)
+	{
+		// variable delta is (b square-4ab) 
+		int delta = b*b-4*a*c;
+		// variable root1 holds the x's root1 
+		double root1=(-b+Math.sqrt(delta))/(2*a);
+		// variable root2 holds the x's root2
+		double root2=(-b-Math.sqrt(delta))/(2*a);
+		System.out.println("Given Quadratic Equation is : "+a+"*x*x+"+ b+"*x+" + c);
+		System.out.println("\n**************RESULT*******************");
+		System.out.println("First Root  :"+root1);
+		System.out.println("Second Root :"+root2);
+
+	}
 }

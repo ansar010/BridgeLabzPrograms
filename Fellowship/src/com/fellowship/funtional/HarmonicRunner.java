@@ -7,7 +7,6 @@
  ************************************************/
 package com.fellowship.funtional;
 
-import java.util.Scanner;
 import com.fellowship.utilities.Utilities;
 
 public class HarmonicRunner 

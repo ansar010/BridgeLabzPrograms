@@ -8,17 +8,16 @@
  */
 package com.fellowship.funtional;
 
-import java.util.Scanner;
 import com.fellowship.utilities.Utilities;
 
-public class PrimeFactor 
-{
+public class PrimeFactorRunner 
+{	/*
+	 *The main function written to run the primeFactorization
+	 */
 	public static void main(String[] args)
 	{
-	Scanner sc = new Scanner(System.in);
 	System.out.println("Enter the number to find the Prime factorization");
-	long n = sc.nextLong(); // n -> to get number from user
+	long n = Utilities.getLong(); // n -> to get number from user
 	Utilities.primeFactorization(n); //Calling method to find prime factors of n 
-	sc.close();
 	}
 }

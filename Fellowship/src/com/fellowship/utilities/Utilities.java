@@ -663,7 +663,7 @@ public class Utilities {
 	 */
 	private static String swap(String str, int firstPos, int secondPos)
 	{
-		// var temp->to Store first word
+		// variable temp->to Store first word
 		char temp;
 		char[] ch = str.toCharArray();
 		temp = ch[firstPos];
@@ -689,7 +689,7 @@ public class Utilities {
 
 			if(choice==1) {
 
-				// function which give exact time iin nano seconds
+				// function which give exact time in nano seconds
 				start = System.nanoTime();
 			}
 

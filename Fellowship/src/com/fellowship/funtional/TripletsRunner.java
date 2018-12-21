@@ -8,8 +8,10 @@
  */
 package com.fellowship.funtional;
 import com.fellowship.utilities.Utilities;
-public class Triplets 
-{
+public class TripletsRunner 
+{	/*
+	 *The main function written to run the Triplets
+	 */
 	public static void main(String[] args) 
 	{
 		System.out.println("Enter the number of inputs");

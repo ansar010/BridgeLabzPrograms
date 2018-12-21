@@ -10,8 +10,10 @@ package com.fellowship.funtional;
 
 import com.fellowship.utilities.Utilities;
 
-public class StopWatch 
-{
+public class StopWatchRunner 
+{	/*
+	 *The main function written to run stopWatch
+	 */
 	public static void main(String[] args)
 	{
 		// calling method to calculate elapsed time

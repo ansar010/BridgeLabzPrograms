@@ -1,11 +1,11 @@
-/**
+/***********************************************************************************
  * purpose : A program with cubic running time. Read in N integers and counts the
  *			 number of triples that sum to exactly 0. 
  *
  *@author Ansar
  *@version 1.2
  *@since 18/12/2018
- */
+ ***********************************************************************************/
 package com.fellowship.funtional;
 import com.fellowship.utilities.Utilities;
 public class TripletsRunner 

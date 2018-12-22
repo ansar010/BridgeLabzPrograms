@@ -937,9 +937,11 @@ public class Utilities {
 		return windchill;
 	}
 	//*********************************************************************************************
-								//ALGORITHMS//
+	//ALGORITHMS//
 	//*********************************************************************************************
-	
+
+
+
 	// Method to return the day Number 
 	/**
 	 * 
@@ -956,4 +958,55 @@ public class Utilities {
 		int d0 = (((day + x + 31*m0	/ 12) % 7));
 		return d0;
 	}
+	//*********************************************************************************************
+
+	// Method to check Anagram
+	/**
+	 * 
+	 * @param firstString takes first String from user
+	 * @param secondString takes second String from user
+	 */
+	public static void isAnagram(String firstString, String secondString) 
+	{
+		//removing Spaces from given String to compare
+		String firstWord  = firstString.replaceAll("\\s", "");
+		String secondWord = secondString.replaceAll("\\s", "");
+
+		//Check if the given string's length is equal or not
+		if(firstWord.length()!=secondWord.length())
+		{
+			System.out.println("Both String length is not same since it's not Anagram");
+		}
+		else
+		{	// variable s1 and s2  sorted String
+			String s1=sortingString(firstString);
+			String s2=sortingString(secondWord);
+			// It checks given strings equal or not 
+			if(s1.equalsIgnoreCase(s2))
+			{
+				System.out.println("String "+firstString+" and "+secondString+" is Anagram");
+			}
+			else
+			{
+				System.out.println("String "+firstString+" and "+secondString+" is Not Anagram");
+			}
+		}
+
+	}
+	//*********************************************************************************************
+	
+	//Method to Sort String
+	/**
+	 * 
+	 * @param str takes string from user
+	 * @return returns the sorted string
+	 */
+	public static String sortingString(String str)
+	{
+		char chArr[]=str.toCharArray();
+		Arrays.sort(chArr);
+		return new String(chArr);
+	}
+	//*********************************************************************************************
+	
 }

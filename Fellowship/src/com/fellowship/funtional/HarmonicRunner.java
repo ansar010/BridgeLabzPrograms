@@ -7,7 +7,7 @@
  ************************************************/
 package com.fellowship.funtional;
 
-import com.fellowship.utilities.Utilities;
+import com.fellowship.utilities.Utility;
 
 public class HarmonicRunner 
 {	/*
@@ -16,7 +16,7 @@ public class HarmonicRunner
 	public static void main(String[] args) 
 	{
 		System.out.println("Enter the N number: ");
-		int n=Utilities.getInt(); // n -> To get number from user
-		Utilities.nHarmonicValue(n);
+		int n=Utility.getInt(); // n -> To get number from user
+		Utility.nHarmonicValue(n);
 	}
 }

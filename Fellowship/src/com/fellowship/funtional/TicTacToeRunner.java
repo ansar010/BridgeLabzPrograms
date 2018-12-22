@@ -8,7 +8,7 @@
  */
 package com.fellowship.funtional;
 
-import com.fellowship.utilities.Utilities;
+import com.fellowship.utilities.Utility;
 
 public class TicTacToeRunner 
 {	/*
@@ -23,8 +23,8 @@ public class TicTacToeRunner
 		System.out.println("Enter the Name of the player 2");
 		
 		// variable name holds the name of the player2
-		String name=Utilities.getLine();
+		String name=Utility.getLine();
 		//Calling method to play TicTacTeo game
-		Utilities.gameTicTacTeo(name);
+		Utility.gameTicTacTeo(name);
 	}
 }

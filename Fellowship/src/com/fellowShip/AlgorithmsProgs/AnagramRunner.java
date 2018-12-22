@@ -7,7 +7,7 @@
  ******************************************************************************/  
 package com.fellowShip.AlgorithmsProgs;
 
-import com.fellowship.utilities.Utilities;
+import com.fellowship.utilities.Utility;
 
 public class AnagramRunner
 {	/*
@@ -19,11 +19,11 @@ public class AnagramRunner
 		System.out.println("==================================================");
 		
 		System.out.print("Enter First String : ");
-		String firstString = Utilities.getLine();
+		String firstString = Utility.getLine();
 		
 		System.out.print("Enter Second String: ");
-		String secondString = Utilities.getLine();
+		String secondString = Utility.getLine();
 		// Calling  method to check Anagram
-		Utilities.isAnagram(firstString,secondString);
+		Utility.isAnagram(firstString,secondString);
 	}
 }

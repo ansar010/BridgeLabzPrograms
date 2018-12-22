@@ -6,7 +6,7 @@
  * @since 18/12/2018
  ******************************************************************************/
 package com.fellowship.funtional;
-import com.fellowship.utilities.Utilities;
+import com.fellowship.utilities.Utility;
 public class TwoDimArr
 {	/*
 	 *The main function written to run the TwoDArr
@@ -15,12 +15,12 @@ public class TwoDimArr
 	{
 		
 		System.out.println("Enter the Number of rows");
-		int row=Utilities.getInt();
+		int row=Utility.getInt();
 		System.out.println("Enter the Number of Columns");
-		int col=Utilities.getInt();
+		int col=Utility.getInt();
 		
 		// Calling method to write elements in the form of 2D Array
-		Utilities.TwoDArr(row, col);
+		Utility.TwoDArr(row, col);
 		
 	}
 }

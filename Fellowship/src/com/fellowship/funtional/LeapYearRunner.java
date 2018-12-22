@@ -7,7 +7,7 @@
  **********************************************************/
 package com.fellowship.funtional;
 
-import com.fellowship.utilities.Utilities;
+import com.fellowship.utilities.Utility;
 
 public class LeapYearRunner 
 {	/*
@@ -16,7 +16,7 @@ public class LeapYearRunner
 	public static void main(String[] args)
 	{
 		System.out.println("Enter the Year to Check whether it is Leap Year or Not..!");
-		int year = Utilities.getInt();
-		Utilities.isLeapYear(year); //calling method to check leap year
+		int year = Utility.getInt();
+		Utility.isLeapYear(year); //calling method to check leap year
 	}
 }

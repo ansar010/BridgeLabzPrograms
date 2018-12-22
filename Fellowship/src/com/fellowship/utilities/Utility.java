@@ -14,7 +14,7 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
-public class Utilities {
+public class Utility {
 	/**
 	 * static Scanner and Random class objects to to call inbuilt methods 
 	 */
@@ -396,23 +396,6 @@ public class Utilities {
 			System.out.print(num);
 		}
 	}
-
-	//Method to check the Number is Prime or not
-	/**
-	 * 
-	 * @param n to get number from user
-	 * @return true if number is prime else false
-	 */
-	private static boolean isPrime(int n) 
-	{
-		for(int i=2;i<=n/2;i++)
-		{
-			if(n%i==0)
-				return false;
-		}
-
-		return true;
-	}
 	//*********************************************************************************************
 
 	//7. Method to stimulate the gambler
@@ -751,7 +734,7 @@ public class Utilities {
 				else // This else block exist while player2's turn
 				{
 					//System.out.println(player+" Your turn..!");
-					number =Utilities.getInt();
+					number =Utility.getInt();
 
 				}
 				// It checks the given value is valid or not , value should be from 1 to 9
@@ -936,12 +919,58 @@ public class Utilities {
 		double windchill = 35.74+0.6215*t+(0.4275*t-35.75)*Math.pow(v, 0.16);
 		return windchill;
 	}
-	//*********************************************************************************************
-	//ALGORITHMS//
-	//*********************************************************************************************
+	//*********************************************************************************************//
+	//##########################################ALGORITHMS#########################################//
+	//*********************************************************************************************//
 
+	//Method to check the Number is Prime or not
+	/**
+	 * 
+	 * @param n to get number from user
+	 * @return true if number is prime else false
+	 */
+	private static boolean isPrime(int n) 
+	{	//divide given number 
+		for(int i=2;i<=n/2;i++)
+		{
+			if(n%i==0)
+				return false;
+		}
 
+		return true;
+	}
 
+	// Method to Check the Number is Palindrome or Not 
+	/**
+	 * It checks the given number is palindrome or not
+	 * @param number takes number from user
+	 * @return true if number is palindrome else false
+	 */
+	public static boolean isNumberPalindrome(int number)
+	{	
+		int temp=number;
+		int result=0;
+		while(number!=0)
+		{
+			int remainder=number%10;
+			result=result*10+remainder;
+			number=number/10;
+		}
+
+		return temp==result;
+	}
+
+	public static boolean isStringPalindrome(String string)
+	{
+		int i = 0;
+		while(i<string.length()/2)
+		{
+			if(string.charAt(i)!=string.charAt(string.length()-1-i))
+				return false;
+			i++;
+		}
+		return true;
+	}
 	// Method to return the day Number 
 	/**
 	 * 
@@ -994,7 +1023,7 @@ public class Utilities {
 
 	}
 	//*********************************************************************************************
-	
+
 	//Method to Sort String
 	/**
 	 * 
@@ -1008,5 +1037,5 @@ public class Utilities {
 		return new String(chArr);
 	}
 	//*********************************************************************************************
-	
+
 }

@@ -7,7 +7,7 @@
  ********************************************************************/
 package com.fellowship.funtional;
 
-import com.fellowship.utilities.Utilities;
+import com.fellowship.utilities.Utility;
 
 public class coupon_newRunner 
 {	/*
@@ -18,9 +18,9 @@ public class coupon_newRunner
 		System.out.println("Enter the Number of coupons U want..!");
 
 		// n->to get numbers from user
-		int n = Utilities.getInt();
+		int n = Utility.getInt();
 
 		// Calling method to generate distinct coupon number
-		Utilities.couponNew(n);
+		Utility.couponNew(n);
 	}
 }

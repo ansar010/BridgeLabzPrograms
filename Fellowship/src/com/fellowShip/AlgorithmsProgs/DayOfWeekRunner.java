@@ -7,7 +7,7 @@
  ******************************************************************************/
 package com.fellowShip.AlgorithmsProgs;
 
-import com.fellowship.utilities.Utilities;
+import com.fellowship.utilities.Utility;
 
 public class DayOfWeekRunner 
 {	/*
@@ -21,7 +21,7 @@ public class DayOfWeekRunner
 		int year = Integer.parseInt(args[2]);
 		String days[]= {"Sunday","Monday","TuesDay","WednessDay","ThursDay","FriDay","SaturDay"};
 		//calling method to get the day on the given date
-		int dayname=Utilities.dayOfWeek(day,month,year);
+		int dayname=Utility.dayOfWeek(day,month,year);
 		System.out.println("The Day of given date "+day+"/"+month+"/"+year+" is : "+days[dayname]);
 	}
 }

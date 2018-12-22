@@ -7,7 +7,7 @@
  ******************************************************************************/  
 package com.fellowship.funtional;
 
-import com.fellowship.utilities.Utilities;
+import com.fellowship.utilities.Utility;
 
 public class WindChillRunner
 {	/*
@@ -41,7 +41,7 @@ public class WindChillRunner
 		}
 		
 		// calling method to pass t and v value and get windChill
-		double windchill=Utilities.windChill(t,v);
+		double windchill=Utility.windChill(t,v);
 		System.out.println("The WindChill is : "+windchill);
 	}
 }

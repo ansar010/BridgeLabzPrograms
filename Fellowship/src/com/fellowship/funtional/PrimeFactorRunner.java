@@ -8,7 +8,7 @@
  **********************************************************/
 package com.fellowship.funtional;
 
-import com.fellowship.utilities.Utilities;
+import com.fellowship.utilities.Utility;
 
 public class PrimeFactorRunner 
 {	/*
@@ -17,7 +17,7 @@ public class PrimeFactorRunner
 	public static void main(String[] args)
 	{
 	System.out.println("Enter the number to find the Prime factorization");
-	long n = Utilities.getLong(); // n -> to get number from user
-	Utilities.primeFactorization(n); //Calling method to find prime factors of n 
+	long n = Utility.getLong(); // n -> to get number from user
+	Utility.primeFactorization(n); //Calling method to find prime factors of n 
 	}
 }

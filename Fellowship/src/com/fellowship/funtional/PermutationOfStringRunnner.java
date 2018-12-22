@@ -8,7 +8,7 @@
 
 package com.fellowship.funtional;
 
-import com.fellowship.utilities.Utilities;
+import com.fellowship.utilities.Utility;
 
 public class PermutationOfStringRunnner 
 {	/*
@@ -17,9 +17,9 @@ public class PermutationOfStringRunnner
 	public static void main(String[] args)
 	{
 		System.out.println("Enter the String..");
-		String word = Utilities.getWord();
+		String word = Utility.getWord();
 		
 		// Method call for all possible combination 
-		Utilities.permutationString(word,0,word.length()-1);
+		Utility.permutationString(word,0,word.length()-1);
 	}
 }

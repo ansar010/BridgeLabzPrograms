@@ -7,7 +7,7 @@
  *@since 18/12/2018
  ***********************************************************************************/
 package com.fellowship.funtional;
-import com.fellowship.utilities.Utilities;
+import com.fellowship.utilities.Utility;
 public class TripletsRunner 
 {	/*
 	 *The main function written to run the Triplets
@@ -15,12 +15,12 @@ public class TripletsRunner
 	public static void main(String[] args) 
 	{
 		System.out.println("Enter the number of inputs");
-		int[] arr=Utilities.createIntArr();
+		int[] arr=Utility.createIntArr();
 		int l = arr.length;
 		
 		// Calling method to Display the Elements
-		Utilities.displayArr(arr);
+		Utility.displayArr(arr);
 		 // Calling method to give triplets of zero
-		Utilities.tripletsZero(arr,l);
+		Utility.tripletsZero(arr,l);
 	}
 }

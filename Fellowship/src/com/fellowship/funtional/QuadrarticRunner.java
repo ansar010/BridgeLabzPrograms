@@ -7,7 +7,7 @@
  ********************************************************************/
 package com.fellowship.funtional;
 
-import com.fellowship.utilities.Utilities;
+import com.fellowship.utilities.Utility;
 
 public class QuadrarticRunner
 {	/*
@@ -16,14 +16,14 @@ public class QuadrarticRunner
 	public static void main(String[] args) 
 	{
 		System.out.println("Enter the value of a : ");
-		int a = Utilities.getInt();
+		int a = Utility.getInt();
 
 		System.out.println("Enter the value of b : ");
-		int b = Utilities.getInt();
+		int b = Utility.getInt();
 		
 		System.out.println("Enter the value of c : ");
-		int c = Utilities.getInt();
+		int c = Utility.getInt();
 		// Calling method to find the root1 and root2 of x
-		Utilities.quadratic( a, b, c);
+		Utility.quadratic( a, b, c);
 	}
 }

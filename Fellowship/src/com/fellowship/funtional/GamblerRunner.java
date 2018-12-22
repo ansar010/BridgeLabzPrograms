@@ -10,7 +10,7 @@
  ***********************************************************************************************/
 package com.fellowship.funtional;
 
-import com.fellowship.utilities.Utilities;
+import com.fellowship.utilities.Utility;
 
 public class GamblerRunner 
 {	/*
@@ -20,17 +20,17 @@ public class GamblerRunner
 	{		
 		// Getting initial amount of Gamblers
 		System.out.println("Enter the $Stak Value  ");
-		int $stak = Utilities.getInt();
+		int $stak = Utility.getInt();
 		
 		//Getting desired amount of gambler
 		System.out.println("Set your Goal..!");
-		int $goal = Utilities.getInt();
+		int $goal = Utility.getInt();
 		
 		//Getting Number of Trials Gambler Want
 		System.out.println("Enter the number of times u want to try..!");
-		int numOfTimes = Utilities.getInt();
+		int numOfTimes = Utility.getInt();
 		
 		// Calling method to perform task
-		Utilities.playGame($stak,$goal,numOfTimes);
+		Utility.playGame($stak,$goal,numOfTimes);
 	}
 }

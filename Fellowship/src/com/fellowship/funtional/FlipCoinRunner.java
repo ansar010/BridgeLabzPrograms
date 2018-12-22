@@ -7,7 +7,7 @@
  ******************************************************************************/
 package com.fellowship.funtional;
 
-import com.fellowship.utilities.Utilities;
+import com.fellowship.utilities.Utility;
 
 public class FlipCoinRunner 
 {	/*
@@ -17,8 +17,8 @@ public class FlipCoinRunner
 	{
 
 		System.out.println("Enter the number of times You want to flip Coin..");
-		int n = Utilities.getInt();  // n-> Number of time user want to flip coin
-		Utilities.flipCoin(n); // calling method to flip coin and calculate percentage
+		int n = Utility.getInt();  // n-> Number of time user want to flip coin
+		Utility.flipCoin(n); // calling method to flip coin and calculate percentage
 		
 	}
 }

@@ -8,13 +8,13 @@
 package com.fellowship.funtional;
 import java.util.Scanner;
 
-import com.fellowship.utilities.Utilities;
+import com.fellowship.utilities.Utility;
 public class ReplaceString {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Enter the user-name : ");
-		Utilities.replaceString(sc.nextLine());
+		Utility.replaceString(sc.nextLine());
 		sc.close();
 	}
 	

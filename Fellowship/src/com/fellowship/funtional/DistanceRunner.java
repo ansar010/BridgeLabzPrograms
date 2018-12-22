@@ -7,7 +7,7 @@
  ************************************************/
 package com.fellowship.funtional;
 
-import com.fellowship.utilities.Utilities;
+import com.fellowship.utilities.Utility;
 
 public class DistanceRunner 
 {	/*
@@ -17,7 +17,7 @@ public class DistanceRunner
 	{	// Command Line arguments 
 		int x = Integer.parseInt(args[0]);
 		int y = Integer.parseInt(args[1]);
-		Utilities.euclideanDistance(x,y);
+		Utility.euclideanDistance(x,y);
 
 	}
 }

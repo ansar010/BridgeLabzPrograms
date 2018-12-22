@@ -9,7 +9,7 @@
  ****************************************************************************************/
 package com.fellowship.funtional;
 
-import com.fellowship.utilities.Utilities;
+import com.fellowship.utilities.Utility;
 
 public class CouponRunner
 {	/*
@@ -18,11 +18,11 @@ public class CouponRunner
 	public static void main(String[] args)
 	{
 		System.out.println("Enter Number of Coupons you want..!");
-		int[] coupons = Utilities.createIntArr(); // Calling method to create and insert integer in array
+		int[] coupons = Utility.createIntArr(); // Calling method to create and insert integer in array
 		
 		// calling method to get distinct random number
 		// variable turns hold total number of iteration
-		int iteration=Utilities.totalIterations(coupons);
+		int iteration=Utility.totalIterations(coupons);
 		System.out.println("Total randrom number / Turns to needed for distinct coupons : "+iteration);
 	}
 }

@@ -8,7 +8,7 @@
  ******************************************************************************/
 package com.fellowship.funtional;
 
-import com.fellowship.utilities.Utilities;
+import com.fellowship.utilities.Utility;
 
 public class StopWatchRunner 
 {	/*
@@ -17,6 +17,6 @@ public class StopWatchRunner
 	public static void main(String[] args)
 	{
 		// calling method to calculate elapsed time
-		Utilities.elapsedTime();
+		Utility.elapsedTime();
 	}
 }

@@ -936,7 +936,18 @@ public class Utilities {
 		double windchill = 35.74+0.6215*t+(0.4275*t-35.75)*Math.pow(v, 0.16);
 		return windchill;
 	}
-
+	//*********************************************************************************************
+								//ALGORITHMS//
+	//*********************************************************************************************
+	
+	// Method to return the day Number 
+	/**
+	 * 
+	 * @param day takes date from user
+	 * @param month takes month number from user
+	 * @param year takes year number from user
+	 * @return It returns the Day number on the given date
+	 */
 	public static int dayOfWeek(int day, int month, int year) 
 	{
 		int y0 = ((year - (14 - month) / 12));

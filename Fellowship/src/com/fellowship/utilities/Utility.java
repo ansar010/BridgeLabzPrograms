@@ -1140,7 +1140,7 @@ public class Utility {
 			}
 		}
 	}
-	
+
 	//Method for BinarySearch
 	/**
 	 * 
@@ -1150,10 +1150,10 @@ public class Utility {
 	 * @param key element to be search
 	 * @return
 	 */
-	
+
 	public static int binarySearchInt(int[] arr,int top,int bottom,int key)
 	{	// Returns index of x if it is present in arr[l.. 
-	    // r], else return -1 		
+		// r], else return -1 		
 		if(bottom>=top)
 		{
 			int mid=top+(bottom-top)/2;
@@ -1164,31 +1164,27 @@ public class Utility {
 			if(arr[mid]>key)
 				return binarySearchInt(arr, top, mid-1, key);
 			//if search element not in left half,then it will in right half
-				return binarySearchInt(arr, mid+1, bottom, key);
+			return binarySearchInt(arr, mid+1, bottom, key);
 		}
 		return -1;
 	}
-	
-	//Method for binary searchInteger non-recursive
-	public static int binarySearchIntNonRec(int arr[],int low,int high,int search)
+	// Binary search method for String 
+	public static int stringBinarySearch(String string[],int low,int high,String search)
 	{
-		while(low<=high)
+		if(high>=low)
 		{
 			int mid=(low+high)/2;
-			
-			if(arr[mid]==search)
-				return mid;
-			if(arr[mid]>search)
-			{
-				high=mid-1;
-			}
-			if(arr[mid]<search)
-			{
-				low=mid+1;
-			}
-			else
+			if(string[mid].compareToIgnoreCase(search)==0)
 			{
 				return mid;
+			}
+			if(string[mid].compareToIgnoreCase(search)>0)
+			{
+				return stringBinarySearch(string, low, mid-1, search);
+			}
+			if(string[mid].compareToIgnoreCase(search)<0)
+			{
+				return stringBinarySearch(string, mid+1, high, search);
 			}
 		}
 		return -1;

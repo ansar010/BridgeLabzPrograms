@@ -960,9 +960,16 @@ public class Utility {
 		return temp==result;
 	}
 
+	//Method to check the given string is palindrome or not
+	/**
+	 * 
+	 * @param string takes String from the user
+	 * @return return true if string is palindrome else false
+	 */
 	public static boolean isStringPalindrome(String string)
-	{
+	{	//Starting index of string
 		int i = 0;
+		//iterate until index reach half of the string
 		while(i<string.length()/2)
 		{
 			if(string.charAt(i)!=string.charAt(string.length()-1-i))
@@ -1036,6 +1043,60 @@ public class Utility {
 		Arrays.sort(chArr);
 		return new String(chArr);
 	}
-	//*********************************************************************************************
 
+	// Method to perform insertion sort on integer
+	/**
+	 * 
+	 * @param arr takes integer array 
+	 */
+	public static void insertionSortInt(int arr[])
+	{	//Length of an array
+		int length=arr.length;
+
+		//Iterate until all elements sorted 
+		for(int i=1; i<length;i++)
+		{	//variable j is previous position/hole position where value to be insert
+			int j=i-1;
+
+			// key is temporary variable that holds value to be inserted 
+			int key=arr[i];
+
+			/* Move elements of arr[0..i-1], that are 
+            greater than key, to one position ahead 
+            of their current position */
+			while(j>=0&&arr[j]>key)
+			{	
+				//swap the value which is greater than current value
+				arr[j+1]=arr[j];
+
+				//Decrementing j to point previous position
+				j=j-1;
+			}
+			//sorting based on ascending order
+			arr[j+1]=key;
+		}
+	}
+
+	//Method of insertion sort for String
+	public static void stringInsertionSort(String string[])
+	{
+		int length = string.length;
+		for(int i=1;i<length;i++)
+		{
+			int j=i-1;
+			String key=string[i];
+			while(j>=0&&string[j].compareToIgnoreCase(key)>0)
+			{
+				string[j+1]=string[j];
+				j=j-1;
+			}
+			string[j+1]=key;
+		}
+		
+	}
+	public static int binarySearchInt(int[] elements,int length,int x)
+	{
+
+		return 0;
+	}
 }

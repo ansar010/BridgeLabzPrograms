@@ -379,18 +379,18 @@ public class Utility {
 		System.out.print("Prime factors of "+num+" : ");
 		//for(long i=2;i*i<=num;i++)
 
-		// num/i -> to divide given number for further itreation
+		// num/i -> to divide given number for further iteration
 		for(long i=2;i<=num/i;i++) 
 		{
 			// Checking condition and prints prime factor
 			while(num%i==0)
-			{
+			{	//Getting quotient to divide further 
 				num=num/i;
 				System.out.print(i+" ");
 			}
 		}
 
-		//To Print Print factor of last remaining digit
+		//To Print factor of last remaining digit
 		if(num>1)
 		{
 			System.out.print(num);
@@ -929,7 +929,7 @@ public class Utility {
 	 * @param n to get number from user
 	 * @return true if number is prime else false
 	 */
-	private static boolean isPrime(int n) 
+	public static boolean isPrime(int n) 
 	{	//divide given number 
 		for(int i=2;i<=n/2;i++)
 		{
@@ -1169,23 +1169,34 @@ public class Utility {
 		return -1;
 	}
 	// Binary search method for String 
+	/**
+	 * 
+	 * @param string takes string array
+	 * @param low initial index
+	 * @param high last index
+	 * @param search element to be search
+	 * @return
+	 */
 	public static int stringBinarySearch(String string[],int low,int high,String search)
-	{
+	{	// Returns index of x if it is present in arr[l.. 
+		// r], else return -1 		
 		if(high>=low)
 		{
 			int mid=(low+high)/2;
+			//check if search element present in mid element
 			if(string[mid].compareToIgnoreCase(search)==0)
 			{
 				return mid;
 			}
+			//check key greater ,ignore right half
 			if(string[mid].compareToIgnoreCase(search)>0)
 			{
 				return stringBinarySearch(string, low, mid-1, search);
 			}
-			if(string[mid].compareToIgnoreCase(search)<0)
-			{
-				return stringBinarySearch(string, mid+1, high, search);
-			}
+
+			//if search element not in left half,then it will in right half
+			return stringBinarySearch(string, mid+1, high, search);
+
 		}
 		return -1;
 	}

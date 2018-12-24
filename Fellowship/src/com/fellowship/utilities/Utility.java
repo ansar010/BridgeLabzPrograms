@@ -1101,6 +1101,44 @@ public class Utility {
 		}
 	}
 	// Method for BubbleSort
+	/**
+	 *
+	 * @param arr takes integer array
+	 */
+	public static void bubbleSortInt(int arr[])
+	{	
+		int length=arr.length;
+		//traverse over array to sort
+		for(int i=0;i<length-1;i++)
+		{	//condition to compare previous and adjacent element to swap
+			for(int j=0;j<length-i-1;j++)
+			{
+				if(arr[j]>arr[j+1])
+				{
+					int temp=arr[j+1];
+					arr[j+1]=arr[j];
+					arr[j]=temp;
+				}
+			}
+		}
+	}
+	//Method of String bubble sort
+	public static void stringBubbleSort(String string[])
+	{
+		int length=string.length;
+		for(int i=0;i<length-1;i++)
+		{
+			for(int j=0;j<length-i-1;j++)
+			{
+				if(string[j].compareToIgnoreCase(string[j+1])>0)
+				{
+					String temp=string[j+1];
+					string[j+1]=string[j];
+					string[j]=temp;
+				}
+			}
+		}
+	}
 	public static int binarySearchInt(int[] elements,int length,int x)
 	{
 

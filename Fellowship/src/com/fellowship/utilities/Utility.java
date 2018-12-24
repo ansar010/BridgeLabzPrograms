@@ -1126,8 +1126,9 @@ public class Utility {
 	public static void stringBubbleSort(String string[])
 	{
 		int length=string.length;
+		//traverse over array to sort
 		for(int i=0;i<length-1;i++)
-		{
+		{	//condition to compare previous and adjacent element to swap
 			for(int j=0;j<length-i-1;j++)
 			{
 				if(string[j].compareToIgnoreCase(string[j+1])>0)
@@ -1139,9 +1140,57 @@ public class Utility {
 			}
 		}
 	}
-	public static int binarySearchInt(int[] elements,int length,int x)
+	
+	//Method for BinarySearch
+	/**
+	 * 
+	 * @param arr takes integer array
+	 * @param top initial index
+	 * @param bottom last index
+	 * @param key element to be search
+	 * @return
+	 */
+	
+	public static int binarySearchInt(int[] arr,int top,int bottom,int key)
+	{	// Returns index of x if it is present in arr[l.. 
+	    // r], else return -1 		
+		if(bottom>=top)
+		{
+			int mid=top+(bottom-top)/2;
+			//check if search element present in mid element
+			if(arr[mid]==key)
+				return mid;
+			//check key greater ,ignore right half
+			if(arr[mid]>key)
+				return binarySearchInt(arr, top, mid-1, key);
+			//if search element not in left half,then it will in right half
+				return binarySearchInt(arr, mid+1, bottom, key);
+		}
+		return -1;
+	}
+	
+	//Method for binary searchInteger non-recursive
+	public static int binarySearchIntNonRec(int arr[],int low,int high,int search)
 	{
-
-		return 0;
+		while(low<=high)
+		{
+			int mid=(low+high)/2;
+			
+			if(arr[mid]==search)
+				return mid;
+			if(arr[mid]>search)
+			{
+				high=mid-1;
+			}
+			if(arr[mid]<search)
+			{
+				low=mid+1;
+			}
+			else
+			{
+				return mid;
+			}
+		}
+		return -1;
 	}
 }

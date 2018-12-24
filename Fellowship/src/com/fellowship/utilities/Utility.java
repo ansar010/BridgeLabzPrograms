@@ -1200,4 +1200,20 @@ public class Utility {
 		}
 		return -1;
 	}
+
+	//Method to check integer Anagram
+	//	public static boolean isIntAnagram(int number1,int number2)
+	//	{
+	//		String firstNumber[]= Integer.toString(number1);
+	//		char secondNumber[]=String.valueOf(number2).toCharArray();
+	//		//int length1=String.valueOf(number1).length();
+	//		//int length2=String.valueOf(number2).length();
+	//		
+	//		//if(length1!=length2)
+	//			//return false;
+	//		if(firstNumber.length!=secondNumber.length)
+	//		return false;
+	//		
+	//		stringBubbleSort(firstNumber);
+	//	}
 }

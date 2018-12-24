@@ -1078,22 +1078,29 @@ public class Utility {
 	}
 
 	//Method of insertion sort for String
+	/**
+	 * 
+	 * @param string takes string array
+	 */
 	public static void stringInsertionSort(String string[])
 	{
 		int length = string.length;
 		for(int i=1;i<length;i++)
-		{
+		{	//j place to insert value
 			int j=i-1;
+			//key holds inserted value
 			String key=string[i];
+			//check comparison from start to end 
 			while(j>=0&&string[j].compareToIgnoreCase(key)>0)
-			{
+			{	//Swapping
 				string[j+1]=string[j];
 				j=j-1;
 			}
+			//sorted based on ascending order
 			string[j+1]=key;
 		}
-		
 	}
+	// Method for BubbleSort
 	public static int binarySearchInt(int[] elements,int length,int x)
 	{
 

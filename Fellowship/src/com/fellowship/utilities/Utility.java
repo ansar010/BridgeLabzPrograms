@@ -1201,19 +1201,26 @@ public class Utility {
 		return -1;
 	}
 
+
 	//Method to check integer Anagram
-	//	public static boolean isIntAnagram(int number1,int number2)
-	//	{
-	//		String firstNumber[]= Integer.toString(number1);
-	//		char secondNumber[]=String.valueOf(number2).toCharArray();
-	//		//int length1=String.valueOf(number1).length();
-	//		//int length2=String.valueOf(number2).length();
-	//		
-	//		//if(length1!=length2)
-	//			//return false;
-	//		if(firstNumber.length!=secondNumber.length)
-	//		return false;
-	//		
-	//		stringBubbleSort(firstNumber);
-	//	}
+		public static boolean isIntAnagram(int[] number1,int[] number2)
+		{
+			
+			if(number1.length!=number2.length)
+				return false;
+			
+			int copyOfnumber1[]=number1;
+			int copyOfnumber2[]=number2;
+			
+			bubbleSortInt(copyOfnumber1);
+			displayArr(copyOfnumber1);
+			
+			bubbleSortInt(copyOfnumber2);
+			displayArr(copyOfnumber2);
+			if(copyOfnumber1==copyOfnumber2)
+				return true;
+			else
+				return false;
+			
+		}
 }

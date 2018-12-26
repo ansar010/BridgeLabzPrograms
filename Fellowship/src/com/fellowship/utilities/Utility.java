@@ -109,10 +109,23 @@ public class Utility {
 			System.out.println("Index["+i+"]->"+a[i]);
 		}
 	}
+	
+	//Method to display string Array
+		/**
+		 * 
+		 * @param createStrArr takes string array
+		 */
+		public static void displayStrArr(String[] strArr)
+		{
+			for(int i=0;i<strArr.length;i++)
+			{
+				System.out.println("Index["+i+1+"]"+"->"+strArr[i]);
+			}
+		}
 	/**
 	 * Method to create String and insert elements in String 1D array 
 	 */
-	public static void createStrArr()
+	public static String[] createStrArr()
 	{
 		System.out.println("Enter size of an Array..");
 		int s = getInt();
@@ -123,6 +136,7 @@ public class Utility {
 
 			arr[i]=getWord();
 		}
+		return arr;
 	}
 
 	/**
@@ -1111,7 +1125,7 @@ public class Utility {
 		//traverse over array to sort
 		for(int i=0;i<length-1;i++)
 		{	//condition to compare previous and adjacent element to swap
-			for(int j=0;j<length-i-1;j++)
+			for(int j=0;j<length-i-1;j++)//i-1 to prevent traverse on sorted elements
 			{
 				if(arr[j]>arr[j+1])
 				{
@@ -1322,6 +1336,7 @@ public class Utility {
 		}
 		return false;
 	}
+	
 
 
 

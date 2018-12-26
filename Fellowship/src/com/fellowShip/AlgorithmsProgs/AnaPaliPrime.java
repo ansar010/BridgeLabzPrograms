@@ -11,14 +11,8 @@ import com.fellowship.utilities.Utility;
 
 public class AnaPaliPrime 
 {	/*
- * The main function written to run the anagramPalindrome
- */	
-	/**
-	 * @param args
-	 */
-	/**
-	 * @param args
-	 */
+ 	 * The main function written to run the anagramPalindrome
+ 	 */	
 	public static void main(String[] args)
 	{	
 		int range=1000;

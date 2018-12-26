@@ -11,8 +11,8 @@ import com.fellowship.utilities.Utility;
 
 public class DayOfWeekRunner 
 {	/*
-	 * The main function written to run the dayOfWeek
-	 */	
+ 	 * The main function written to run the dayOfWeek
+ 	 */	
 	public static void main(String[] args)
 	{
 		System.out.println("Enter date month and Year in Command line argument");

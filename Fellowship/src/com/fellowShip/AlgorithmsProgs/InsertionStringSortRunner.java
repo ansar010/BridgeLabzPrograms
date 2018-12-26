@@ -1,9 +1,16 @@
+/**
+ * purpose : Program to get string and sort in insertion sorting order
+ * 
+ * @author Ansar
+ * @verion 1.2
+ * @simce 24/12/2018
+ */
 package com.fellowShip.AlgorithmsProgs;
 
 import com.fellowship.utilities.Utility;
 
 public class InsertionStringSortRunner 
-{
+{	
 	public static void main(String[] args) 
 	{
 		System.out.println("Enter the Number of words : ");

@@ -1201,26 +1201,128 @@ public class Utility {
 		return -1;
 	}
 
+	//*********************************************************************************************
 
-	//Method to check integer Anagram
-		public static boolean isIntAnagram(int[] number1,int[] number2)
+	//Method to find Anagram Prime numbers
+
+	/**
+	 * @param primeNum takes the prime numbers array
+	 * @return total number of anagram prime number
+	 */
+	public static int primeAnagram(int[] primeNum)
+	{	//total numbers anagram primes 
+		int anaLength=0;
+
+		//Passing Prime number one by one and convert into string
+		for(int i=0;i<primeNum.length-1;i++)
 		{
-			
-			if(number1.length!=number2.length)
-				return false;
-			
-			int copyOfnumber1[]=number1;
-			int copyOfnumber2[]=number2;
-			
-			bubbleSortInt(copyOfnumber1);
-			displayArr(copyOfnumber1);
-			
-			bubbleSortInt(copyOfnumber2);
-			displayArr(copyOfnumber2);
-			if(copyOfnumber1==copyOfnumber2)
-				return true;
-			else
-				return false;
-			
+			String word1=String.valueOf(primeNum[i]);
+
+			for(int j=i+1;j<primeNum.length;j++)
+			{
+				String word2=String.valueOf(primeNum[j]);
+
+				//Calling method to check integer is anagram or not
+				boolean flag=checkAnaPrimeNum(word1,word2);
+				if(flag==true)	
+				{
+					anaLength++;
+					System.out.println(word1+" "+word2);
+				}
+			}
 		}
+		return anaLength;
+	}
+	//Method to check given integer is anagram or not
+
+	/**
+	 * @param word1 takes integer in the form of string
+	 * @param word2 takes integer in the form of string
+	 * @return true if given params are anagram else false
+	 */
+	private static boolean checkAnaPrimeNum(String word1, String word2) 
+	{
+		int count1[]=new int[10];  //initialize the array  
+		int count2[]=new int[10];  //initialize the array
+
+		char ch1[]=word1.toCharArray(); //initialize the array and tochararray for spilt the character by character
+		char ch2[]=word2.toCharArray();//initialize the array and tochararray for spilt the character by character
+		/*
+		 * check the length of string of one and two
+		 * if it is not match 
+		 * then it is not anagram
+		 */
+
+		if(word1.length()==word2.length())
+		{
+			/*
+			 * this iteration for store the ascii value of each character in count array
+			 */
+			for(int i=0;i<word1.length();i++)
+			{
+				/*
+				 *  if condition allow only numeric character
+				 */
+				if(ch1[i]>='0'&&ch1[i]<='9') 
+				{
+					count1[ch1[i]-48]++;
+				}  	
+			} 	
+			/*
+			 * 	this iteration for store the ascii vale of each character in count array
+			 */
+			for(int i=0;i<word2.length();i++)
+			{
+				/*
+				 *  if condition allow only numeric character
+				 */
+				if(ch2[i]>='0'&&ch2[i]<='9')
+				{
+					count2[ch2[i]-48]++;
+				}  	
+			}
+			/*
+			 *this iteration for check count1 array and count2 array value same or not 
+			 */
+			for(int i=0;i<count1.length;i++) 
+			{
+				/*
+				 * condition for both array value same vale or not
+				 */
+				if(count1[i]!=count2[i]) 
+				{
+					/*
+					 * this both  iteration for restore all the value of array is zero 
+					 * it help next iteration
+					 */
+					for(int l=0;l<count1.length;l++)
+					{
+						count1[l]=0;
+					}
+					for(int k=0;k<count2.length;k++) 
+					{
+						count2[k]=0;
+					}
+					return false;
+				}
+			}
+			/*
+			 * this both  iteration for restore all the value of array is zero 
+			 * it help next iteration
+			 */
+			for(int l=0;l<count1.length;l++)
+			{
+				count1[l]=0;
+			}
+			for(int k=0;k<count2.length;k++) 
+			{
+				count2[k]=0;
+			}
+			return true;
+		}
+		return false;
+	}
+
+
+
 }

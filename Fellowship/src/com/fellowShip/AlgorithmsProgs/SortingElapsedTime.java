@@ -59,7 +59,7 @@ public class SortingElapsedTime
 			}
 			end=System.currentTimeMillis();
 			System.out.println("Process End..!");
-			elapsedTime=(end-start)/10000;
+			elapsedTime=(end-start)/1000;
 			System.out.println("Elapsed Time is : "+elapsedTime+"seconds");
 			break;
 		
@@ -86,7 +86,7 @@ public class SortingElapsedTime
 			}
 			end=System.currentTimeMillis();
 			System.out.println("Process End..!");
-			elapsedTime=(end-start)/10000;
+			elapsedTime=(end-start)/1000;
 			System.out.println("Elapsed Time is : "+elapsedTime+"seconds");
 			break;
 		
@@ -109,7 +109,7 @@ public class SortingElapsedTime
 			end=System.currentTimeMillis();
 			System.out.println("Process End..!");
 
-			elapsedTime=(end-start)/10000;
+			elapsedTime=(end-start)/1000;
 			System.out.println("Elapsed Time is : "+elapsedTime+"seconds");
 			break;
 		
@@ -130,7 +130,7 @@ public class SortingElapsedTime
 			end=System.currentTimeMillis();
 			System.out.println("Process End..!");
 
-			elapsedTime=(end-start)/10000;
+			elapsedTime=(end-start)/1000;
 			System.out.println("Elapsed Time is : "+elapsedTime+"seconds");
 			break;
 		
@@ -153,7 +153,7 @@ public class SortingElapsedTime
 			end=System.currentTimeMillis();
 			System.out.println("Process End..!");
 
-			elapsedTime=(end-start)/10000;
+			elapsedTime=(end-start)/1000;
 			System.out.println("Elapsed Time is : "+elapsedTime+"seconds");
 			break;
 		
@@ -174,7 +174,7 @@ public class SortingElapsedTime
 			end=System.currentTimeMillis();
 			System.out.println("Process End..!");
 
-			elapsedTime=(end-start)/10000;
+			elapsedTime=(end-start)/1000;
 			System.out.println("Elapsed Time is : "+elapsedTime+"seconds");
 			break;
 			

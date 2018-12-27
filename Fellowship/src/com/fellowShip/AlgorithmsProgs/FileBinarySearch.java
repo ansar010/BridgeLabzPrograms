@@ -64,6 +64,7 @@ public class FileBinarySearch
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		
 		return null;
 	}
 }

@@ -1,14 +1,23 @@
+/*****************************************************************************
+ * purpose : Program to call sorting and searching utility methods
+ * 
+ * @author Ansar
+ * @version 1.2
+ * @since 26/12/2018
+ ******************************************************************************/  
 package com.fellowShip.AlgorithmsProgs;
 
 import com.fellowship.utilities.Utility;
 
 public class SortingElapsedTime 
-{
+{	/*
+	 * written main method to call utility methods
+	 */
 	public static void main(String[] args)
 	{
-		long start;
-		long end;
-		long elapsedTime;
+		long start;//Start time
+		long end;  //End time
+		long elapsedTime;//Elapsed time
 
 		System.out.println("\tList of Sorting Techniques :");
 		System.out.println("\t============================");
@@ -21,7 +30,9 @@ public class SortingElapsedTime
 
 		System.out.print("Enter You Choice : ");
 		int choice = Utility.getInt();
-
+		/**
+		 * getting user choice and responding 
+		 */
 		switch(choice)
 		{
 		

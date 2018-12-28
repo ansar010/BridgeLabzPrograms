@@ -1484,4 +1484,28 @@ public class Utility {
 
 		return pay;
 	}
+
+	public static String toBinary(int num)
+	{	
+		String binaryStr="";
+
+		while(num!=0)
+		{
+			int r=num%2;
+			binaryStr=r+binaryStr;
+			num=num/2;
+		}
+		System.out.println("the binary value of "+num+" is ("+binaryStr+")2");
+
+		return binaryStr;
+	}
+
+	public static void padding(String binary)
+	{
+		for(int i=binary.length();i<32;i++)
+		{
+			binary="0"+binary;
+		}
+		System.out.println("Binary representation in 4Byte is : "+binary);
+	}
 }

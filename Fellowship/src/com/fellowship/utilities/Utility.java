@@ -1429,13 +1429,24 @@ public class Utility {
 			k++;
 		}
 	}
-	
+
 	// Method for Temperature conversion 
-	public static double temperatureConversion(double farenheit_or_Celcius)
-	
+	public static double temperatureConversion(double tempValue,char choice)
+
 	{
-		//double celToFar = 
-		return 0.0;
+		if(choice=='c')
+		{
+			double c=tempValue;
+			double celToFar = (c * 9/5) + 32;
+			return celToFar;
+		}
+		else
+		{
+			double f=tempValue;
+			double  farToCel= (f - 32) * 5/9;
+			return farToCel;
+		}
+
 	}
 	//Method for Newton's Sqrt
 	/**

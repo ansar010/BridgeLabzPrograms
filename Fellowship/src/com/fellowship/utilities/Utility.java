@@ -1429,6 +1429,28 @@ public class Utility {
 			k++;
 		}
 	}
-
-
+	
+	// Method for Temperature conversion 
+	public static double temperatureConversion(double farenheit_or_Celcius)
+	
+	{
+		//double celToFar = 
+		return 0.0;
+	}
+	//Method for Newton's Sqrt
+	/**
+	 * 
+	 * @param c takes integer for find square root
+	 * @return square root of given number
+	 */
+	public static double newtonSqrt(int c)
+	{	//assigning c value to t
+		double t=c;
+		double epsilon=1e-15;//1e-15 -> 10^-15
+		while(Math.abs(t-c/t)>epsilon*t)
+		{
+			t=((c/t)+t)/2.0;
+		}
+		return t;
+	}
 }

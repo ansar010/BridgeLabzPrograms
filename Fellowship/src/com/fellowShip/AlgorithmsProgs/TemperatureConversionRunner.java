@@ -1,5 +1,5 @@
 /*********************************************************************************
- * purpose : Program to sort list of string by using merge Sort method
+ * purpose : Program to get temperature 
  * 
  * @author Ansar
  * @version 1.2

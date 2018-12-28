@@ -1338,7 +1338,6 @@ public class Utility {
 	}
 	//*********************************************************************************************
 
-
 	//Method sort string list by merge sort
 	/**
 	 * 
@@ -1429,6 +1428,7 @@ public class Utility {
 			k++;
 		}
 	}
+	//*********************************************************************************************
 
 	// Method for Temperature conversion 
 	public static double temperatureConversion(double tempValue,char choice)
@@ -1448,6 +1448,8 @@ public class Utility {
 		}
 
 	}
+	//*********************************************************************************************
+
 	//Method for Newton's Sqrt
 	/**
 	 * 
@@ -1463,5 +1465,23 @@ public class Utility {
 			t=((c/t)+t)/2.0;
 		}
 		return t;
+	}
+	//*********************************************************************************************
+
+	// Method to calculate Monthly Payment
+	/**
+	 * 
+	 * @param pValue takes principal amount
+	 * @param yValue takes year 
+	 * @param rValue rate of interest
+	 * @return
+	 */
+	public static double monthlyPayment(double  pValue,int yValue,double rValue)
+	{
+		double n=12*pValue,r=rValue/(12*100);
+		double pow=Math.pow((1+r), -n);
+		double pay=(pValue*r)/(1-pow);
+
+		return pay;
 	}
 }

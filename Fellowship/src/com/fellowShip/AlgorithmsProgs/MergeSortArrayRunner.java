@@ -23,7 +23,6 @@ public class MergeSortArrayRunner
 		Utility.stringMergeSort(strArr, 0, strArr.length-1);
 		System.out.println("Sorted List Of String(Merge Sort Approach)");
 		System.out.println("==========================================");
-
 		Utility.displayStrArr(strArr);
 		
 	}

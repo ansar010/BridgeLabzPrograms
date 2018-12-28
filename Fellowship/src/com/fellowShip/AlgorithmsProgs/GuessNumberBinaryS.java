@@ -1,10 +1,10 @@
-/**********************************************************
+/*********************************************************************************
  * purpose : Program to find the guessed number by suing binary search technique
  * 
  * @author Ansar
  * @version 1.2
  * @since 27/12/2018
- */
+ *********************************************************************************/
 package com.fellowShip.AlgorithmsProgs;
 
 import com.fellowship.utilities.Utility;

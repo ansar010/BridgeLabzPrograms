@@ -109,19 +109,19 @@ public class Utility {
 			System.out.println("Index["+i+"]->"+a[i]);
 		}
 	}
-	
+
 	//Method to display string Array
-		/**
-		 * 
-		 * @param createStrArr takes string array
-		 */
-		public static void displayStrArr(String[] strArr)
+	/**
+	 * 
+	 * @param createStrArr takes string array
+	 */
+	public static void displayStrArr(String[] strArr)
+	{
+		for(int i=0;i<strArr.length;i++)
 		{
-			for(int i=0;i<strArr.length;i++)
-			{
-				System.out.println("Index["+i+1+"]"+"->"+strArr[i]);
-			}
+			System.out.println("Index["+i+"]"+"->"+strArr[i]);
 		}
+	}
 	/**
 	 * Method to create String and insert elements in String 1D array 
 	 */
@@ -1078,16 +1078,16 @@ public class Utility {
 			/* Move elements of arr[0..i-1], that are 
             greater than key, to one position ahead 
             of their current position */
-			while(j>=0&&arr[j]>key)
+			while(j>=0 && arr[j]>key)
 			{	
-				//swap the value which is greater than current value
+				//shift the value which is greater than current value
 				arr[j+1]=arr[j];
 
 				//Decrementing j to point previous position
 				j=j-1;
 			}
 			//sorting based on ascending order
-			arr[j+1]=key;
+			arr[j+1]=key;//-1 +1 =0
 		}
 	}
 
@@ -1336,8 +1336,99 @@ public class Utility {
 		}
 		return false;
 	}
-	
+	//*********************************************************************************************
 
+
+	//Method sort string list by merge sort
+	/**
+	 * 
+	 * @param arr takes string array
+	 * @param firstIndex takes first index value
+	 * @param lastIndex takes last index value
+	 */
+	public static void stringMergeSort(String arr[],int firstIndex,int lastIndex)
+	{	
+		if(firstIndex<lastIndex)
+		{
+			// find the mid point
+			int mid = (firstIndex+lastIndex)/2;
+
+			//Dividing first and second halves by recursive approach
+			stringMergeSort(arr, firstIndex, mid);
+			stringMergeSort(arr, mid+1, lastIndex);
+
+			// calling Method to merge the sorted halves
+			mergeArrays(arr,firstIndex,mid,lastIndex);
+		}
+	}
+	// private method for merge two arrays
+	/**
+	 * 
+	 * @param arr takes String Array
+	 * @param firstIndex first index value
+	 * @param mid mid point value
+	 * @param lastIndex lastIndex value
+	 */
+	private static void mergeArrays(String[] arr, int firstIndex, int mid, int lastIndex) 
+	{
+		//Size of First Array
+		int arr1Size = mid-firstIndex+1;
+		//Size of second Array
+		int arr2Size = lastIndex-mid;
+
+		//Create Temp Array to copy string and compare 
+		String left[]=new String[arr1Size];
+		String right[]=new String[arr2Size];
+
+		//Copy data to temp Array
+		for(int i=0;i<arr1Size;i++)
+		{
+			left[i]=arr[firstIndex+i];
+		}
+		for(int j=0;j<arr2Size;j++)
+		{
+			right[j]=arr[mid+1+j];
+		}
+
+		//Merge the temp arrays by comparing strings
+		//initial indexes of first and second subArrays
+		int i=0,j=0;
+
+		//initial Index of merged subArray
+		int k=0;
+		//loop to compare and merged two subArray
+		while(i<arr1Size && j<arr2Size)
+		{	
+			//it sort string if the left string is less or equal to right str
+			if(left[i].compareToIgnoreCase(right[j])<=0)
+			{
+				arr[k]=left[i];
+				i++;
+			}
+			else
+			{
+				arr[k]=right[j];
+				j++;
+			}
+			k++;//incrementing merge array size
+		}
+
+		//copy remaining element of left Array if any
+		while(i<arr1Size)
+		{
+			arr[k]=left[i];
+			i++;//incrementing left array index
+			k++;//incrementing merged array index
+		}
+
+		//copy remaining elements of right Array if any
+		while(j<arr2Size)
+		{
+			arr[k]=right[j];
+			j++;
+			k++;
+		}
+	}
 
 
 }

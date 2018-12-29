@@ -14,6 +14,8 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
+
+import com.fellowShip.AlgorithmsProgs.BinarryNibble;
 public class Utility {
 	/**
 	 * static Scanner and Random class objects to to call inbuilt methods 
@@ -1484,28 +1486,116 @@ public class Utility {
 
 		return pay;
 	}
-
+	//*********************************************************************************************
+	
+	//Method to convert decimal to binary
+	/**
+	 * 
+	 * @param num takes decimal number
+	 * @return binary value of given decimal number
+	 */
 	public static String toBinary(int num)
 	{	
+		//creating empty string
 		String binaryStr="";
-
+		
+		//variable temp to store num so that can utilize while printing 
+		int temp=num;
+		//loop for getting remainder and concatenating it 
 		while(num!=0)
 		{
 			int r=num%2;
 			binaryStr=r+binaryStr;
 			num=num/2;
 		}
-		System.out.println("the binary value of "+num+" is ("+binaryStr+")2");
+		System.out.println("The binary value of "+temp+" is : ("+binaryStr+")2");
 
 		return binaryStr;
 	}
-
+	
+	//Method for padding to represent 4byte binary
+	/**
+	 * 
+	 * @param binary takes binary number
+	 */
 	public static void padding(String binary)
-	{
+	{	
+		//loop for add remaining digit to make 4byte binary
 		for(int i=binary.length();i<32;i++)
 		{
 			binary="0"+binary;
 		}
 		System.out.println("Binary representation in 4Byte is : "+binary);
+	}
+	//*********************************************************************************************
+	
+	//Method to swap nibbles and find the number
+	/**
+	 * 
+	 * @param binary takes binary values
+	 */
+	public static void nibbleBinary(String binary)
+	{
+		//empty string to swap nibbles 
+		String nibble="";
+		
+		//loop to represent binary in 8 bits
+		for(int i=binary.length();i<8;i++)
+		{
+			   binary = "0"+binary;
+		}
+		System.out.println("8bit binary value is : ("+binary+")2");
+		
+		//taking string into toCharArray for get each bit to perform swap
+		char binaryChar[]=binary.toCharArray();
+		
+		//finding mid value to get first half and second half
+		int mid=binaryChar.length/2;
+		
+		//get second half nibbles
+		for(int i=mid;i<binaryChar.length;i++)
+		{
+			nibble=nibble+binaryChar[i];
+		}
+		
+		//concatenating(swapping)first half into second half
+		for(int i=0;i<mid;i++)
+		{
+			nibble=nibble+binaryChar[i];
+		}
+		
+		System.out.println("The nibble value is : "+nibble);
+		
+		//again taking nibble string as array to convert bin to decimal
+		char finalBinaryChar[]=nibble.toCharArray();
+		
+		int count=nibble.length();//to loop 8 times
+		int j=0; //index value of nibble
+		int sum=0; // total of 2^n
+		int nibleLength=nibble.length()-1;//to traverse from last to 1
+		int num;//to check condition binary number 1 or zero 
+
+		//Loop to convert char to int
+		while(count!=0)
+		{
+			if(finalBinaryChar[nibleLength]=='0')
+			{
+				 num =(int) finalBinaryChar[nibleLength]-48;
+			}
+			else
+			{
+				num=(int)finalBinaryChar[nibleLength]-48;
+			}
+			j++;//incrementing index value from last
+			
+			if(num==1)
+			{
+				
+				sum=sum+((int)(Math.pow(2, j-1)));
+			}
+			nibleLength--;
+			count--;
+		}
+		System.out.println("The Decimal value of "+nibble+" is : "+sum);
 	}
 }
